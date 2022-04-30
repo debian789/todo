@@ -5,7 +5,7 @@ import {TodoCounter} from './components/TodoCounter'
 import {TodoItem} from './components/TodoItem'
 import {TodoList} from './components/TodoList'
 import {TodoSearch} from './components/TodoSearch'
-import {CreateTodoButton} from './components/CreateTodoButton'
+import {ContainerCreateTask} from './components/ContainerCreateTask'
 
 
 
@@ -17,35 +17,18 @@ const todos =  [
 
 function App() {
   return (
-    <React.Fragment>
-
-
-      <h2>Create new task</h2>
-      <label>Task Name</label>
-      <input type="text" />
-      <CreateTodoButton />
-      
-
-
-
-
-      <TodoCounter />
-      
-      
-      <TodoSearch />
-      <input placeholder='Cebolla' />
-      <TodoList >
-
-        {todos.map((item, index) => (
-          <TodoItem key={index} text={item.text}  completed={item.completed} />
-        ))}
-        
-
-      </TodoList>
-
-
-
-    </React.Fragment>
+    <div className='container-app'>
+      <ContainerCreateTask />
+      <div className='container-search-items'>
+        <TodoCounter />
+        <TodoSearch />
+        <TodoList >
+          {todos.map((item, index) => (
+            <TodoItem key={index} text={item.text}  completed={item.completed} />
+          ))}       
+        </TodoList>
+      </div>
+    </div>
   );
 }
 

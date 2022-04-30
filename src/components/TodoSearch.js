@@ -4,11 +4,11 @@ import './TodoSearch.css'
 
 function TodoSearch() {
     return (
-    <React.Fragment>
+    <div className="container-search">
         <input type="text" className='input-search' placeholder='Search...'/>
-        <label>Q</label>
+        <button>Q</button>
 
-    </React.Fragment>
+    </div>
     )
 }
 
