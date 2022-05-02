@@ -1,7 +1,7 @@
 import React from "react";
-import {CreateTodoButton} from './CreateTodoButton'
+import {CreateTodoButton} from '../CreateTodoButton'
 import './ContainerCreateTask.css'
-import createImg from '../images/create.png'
+import createImg from '../../images/create.png'
 
 function ContainerCreateTask(props) {
     return (

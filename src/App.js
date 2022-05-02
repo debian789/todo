@@ -1,13 +1,5 @@
-import logo from './logo.svg';
-import './App.css';
 import React from 'react';
-import {TodoCounter} from './components/TodoCounter'
-import {TodoItem} from './components/TodoItem'
-import {TodoList} from './components/TodoList'
-import {TodoSearch} from './components/TodoSearch'
-import {ContainerCreateTask} from './components/ContainerCreateTask'
-
-
+import {AppUI} from './AppUI';
 
 const todos =  [
   {text: 'Cotar', completed: false},
@@ -19,12 +11,9 @@ function createTaskEvent() {
   console.log('hooola')
 }
 
-
 function App() {
-
   const [searchValue, setSearchValue] = React.useState('');
   const [todoValue, setTodoValue] = React.useState(todos)
-
   const totalTodos = todoValue.length;
   const completedTodo = todoValue.filter(item => !!item.completed).length;
 
@@ -33,7 +22,6 @@ function App() {
   if (!searchValue.length >= 1) {
     searchedTodos = todoValue;
   } else {
-
     searchedTodos = todoValue.filter (todo => {
       const todoText   = todo.text.toLowerCase();
       const searchText = searchValue.toLowerCase();
@@ -41,27 +29,32 @@ function App() {
     })
   }
 
+  const completeTodos = (text) => {
+    const todoIndex = todoValue.findIndex(todo =>  todo.text == text);
+    const newTodos = [...todoValue];
+    newTodos[todoIndex].completed = !newTodos[todoIndex].completed;
+    setTodoValue(newTodos);
+  }
+
+  const deleteTodo = (text) => {
+    console.log(text)
+    const todoIndex = todoValue.findIndex(todo =>  todo.text == text);
+    const newTodos = [...todoValue];
+    newTodos.splice(todoIndex, 1);    
+    setTodoValue(newTodos);
+  }
 
   return (
-    <div className='container-app'>
-      <ContainerCreateTask  createTaskEvent= {createTaskEvent} />
-      <div className='container-search-items'>
-        <TodoCounter 
-          totalTodos={totalTodos}
-          completedTodo={completedTodo}
-
-        />
-        <TodoSearch 
-          searchValue={searchValue}
-          setSearchValue={setSearchValue}
-        />
-        <TodoList >
-          {searchedTodos.map((item, index) => (
-            <TodoItem key={index} text={item.text}  completed={item.completed} />
-          ))}       
-        </TodoList>
-      </div>
-    </div>
+    <AppUI 
+      totalTodos={totalTodos}
+      completedTodo={completedTodo}    
+      searchValue={searchValue}
+      setSearchValue={setSearchValue}
+      completeTodos={completeTodos}
+      deleteTodo={deleteTodo}
+      createTaskEvent={createTaskEvent}
+      searchedTodos={searchedTodos}
+    />
   );
 }
 
