@@ -2,11 +2,11 @@ import React from 'react';
 
 
 
-function TodoCounter () {
+function TodoCounter ({totalTodos, completedTodo}) {
     return (
         <React.Fragment>
             <h1>Your Tasks</h1>
-            <h2>Has completado 2 de 3 TODOs</h2>            
+            <h2>Has completado {completedTodo} de {totalTodos} TODOs</h2>            
         </React.Fragment>
     )
 

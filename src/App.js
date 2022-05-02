@@ -10,20 +10,53 @@ import {ContainerCreateTask} from './components/ContainerCreateTask'
 
 
 const todos =  [
-  {text: 'Cotar cebolla', completed: false},
+  {text: 'Cotar', completed: false},
   {text: 'Cotar cebolla 1', completed: false},
   {text: 'Cotar cebolla 2', completed: true}
 ]
 
+function createTaskEvent() {
+  console.log('hooola')
+}
+
+
 function App() {
+
+  const [searchValue, setSearchValue] = React.useState('');
+  const [todoValue, setTodoValue] = React.useState(todos)
+
+  const totalTodos = todoValue.length;
+  const completedTodo = todoValue.filter(item => !!item.completed).length;
+
+  let searchedTodos = [];
+
+  if (!searchValue.length >= 1) {
+    searchedTodos = todoValue;
+  } else {
+
+    searchedTodos = todoValue.filter (todo => {
+      const todoText   = todo.text.toLowerCase();
+      const searchText = searchValue.toLowerCase();
+      return todoText.includes(searchText);
+    })
+  }
+
+
   return (
     <div className='container-app'>
-      <ContainerCreateTask />
+      <ContainerCreateTask  createTaskEvent= {createTaskEvent} />
       <div className='container-search-items'>
-        <TodoCounter />
-        <TodoSearch />
+        <TodoCounter 
+          totalTodos={totalTodos}
+          completedTodo={completedTodo}
+
+        />
+        <TodoSearch 
+          searchValue={searchValue}
+          setSearchValue={setSearchValue}
+        />
         <TodoList >
-          {todos.map((item, index) => (
+          {searchedTodos.map((item, index) => (
             <TodoItem key={index} text={item.text}  completed={item.completed} />
           ))}       
         </TodoList>

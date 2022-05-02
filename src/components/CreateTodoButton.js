@@ -1,8 +1,13 @@
 import './CreateTodoButton.css'
 
-function CreateTodoButton() {
+
+
+
+function CreateTodoButton(props) {
     return (
-        <button className="create-task">Create task</button>
+        <button className="create-task"
+            onClick={props.createTaskEvent}
+        >Create task</button>
     )
 }
 
