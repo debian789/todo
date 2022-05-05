@@ -10,6 +10,8 @@ import {ContainerCreateTask} from './components/ContainerCreateTask'
 
 
 function AppUI({
+    loading,
+    error,
     totalTodos,
     completedTodo,
     searchValue,
@@ -32,6 +34,10 @@ function AppUI({
         setSearchValue={setSearchValue}
       />
       <TodoList >
+        { error && <p>Hubo un error ... </p>} 
+        { loading && <p>estamos cargando</p>} 
+        { (!loading && !searchedTodos.length) && <p>Crea tu primer todo</p>} 
+
         {searchedTodos.map((item, index) => (
           <TodoItem 
             key={index} 

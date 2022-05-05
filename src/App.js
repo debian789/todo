@@ -1,5 +1,6 @@
 import React from 'react';
 import {AppUI} from './AppUI';
+import { TodoProvider } from './TodoContext';
 
 const todos =  [
   {text: 'Cotar', completed: false},
@@ -7,54 +8,32 @@ const todos =  [
   {text: 'Cotar cebolla 2', completed: true}
 ]
 
+
+
+
+
+
+
 function createTaskEvent() {
   console.log('hooola')
 }
 
 function App() {
-  const [searchValue, setSearchValue] = React.useState('');
-  const [todoValue, setTodoValue] = React.useState(todos)
-  const totalTodos = todoValue.length;
-  const completedTodo = todoValue.filter(item => !!item.completed).length;
 
-  let searchedTodos = [];
 
-  if (!searchValue.length >= 1) {
-    searchedTodos = todoValue;
-  } else {
-    searchedTodos = todoValue.filter (todo => {
-      const todoText   = todo.text.toLowerCase();
-      const searchText = searchValue.toLowerCase();
-      return todoText.includes(searchText);
-    })
-  }
 
-  const completeTodos = (text) => {
-    const todoIndex = todoValue.findIndex(todo =>  todo.text == text);
-    const newTodos = [...todoValue];
-    newTodos[todoIndex].completed = !newTodos[todoIndex].completed;
-    setTodoValue(newTodos);
-  }
-
-  const deleteTodo = (text) => {
-    console.log(text)
-    const todoIndex = todoValue.findIndex(todo =>  todo.text == text);
-    const newTodos = [...todoValue];
-    newTodos.splice(todoIndex, 1);    
-    setTodoValue(newTodos);
-  }
-
+  // Se ejecuta previo al render
+  // Con el array vacio solo se ejecuta una sola vez []
+  // Si se le define un evento solo se ejecuta cuando el el evento es llamado
+/*
+  React.useEffect(()  => {
+    console.log('use efect')
+  },[totalTodos])
+*/
   return (
-    <AppUI 
-      totalTodos={totalTodos}
-      completedTodo={completedTodo}    
-      searchValue={searchValue}
-      setSearchValue={setSearchValue}
-      completeTodos={completeTodos}
-      deleteTodo={deleteTodo}
-      createTaskEvent={createTaskEvent}
-      searchedTodos={searchedTodos}
-    />
+    <TodoProvider>
+      <AppUI   />
+    </TodoProvider>
   );
 }
 
