@@ -4,6 +4,19 @@ import {useLocalStorage} from './useLocalStorage'
 
 const TodoContext = React.createContext();
 
+const todos =  [
+    {text: 'Cotar', completed: false},
+    {text: 'Cotar cebolla 1', completed: false},
+    {text: 'Cotar cebolla 2', completed: true}
+  ]
+  
+
+  
+function createTaskEvent() {
+    console.log('hooola')
+  }
+
+
 function TodoProvider(props) {
 
     const {item:todoValue, saveTodos, loading, error} = useLocalStorage('TODOS_V1', []);

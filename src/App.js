@@ -2,22 +2,13 @@ import React from 'react';
 import {AppUI} from './AppUI';
 import { TodoProvider } from './TodoContext';
 
-const todos =  [
-  {text: 'Cotar', completed: false},
-  {text: 'Cotar cebolla 1', completed: false},
-  {text: 'Cotar cebolla 2', completed: true}
-]
 
 
 
 
 
-
-
-function createTaskEvent() {
-  console.log('hooola')
-}
-
+/*
+*/
 function App() {
 
 
