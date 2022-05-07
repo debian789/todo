@@ -10,3 +10,19 @@
     align-items: center;
     color: white;
   }
+
+
+
+  .modal-content  .container-create-task {
+      display: flex;
+  }
+
+
+    
+@media screen and (min-width: 580px) {  
+    .modal-content  {
+        display: none;
+    }
+  
+
+}
