@@ -7,6 +7,7 @@ import { TodoList } from "./components/TodoList";
 import { TodoSearch } from "./components/TodoSearch";
 import { ContainerCreateTask } from "./components/ContainerCreateTask";
 import { TodoContext } from "./TodoContext";
+import { Modal } from "./components/Modal";
 
 function AppUI() {
   const {
@@ -16,6 +17,8 @@ function AppUI() {
     createTaskEvent,
     completeTodos,
     deleteTodo,
+    openModal,
+    setOpenModal
   } = React.useContext(TodoContext);
 
   return (
@@ -25,16 +28,9 @@ function AppUI() {
         <TodoCounter />
         <TodoSearch />
 
-        {/*   <TodoCounter      
-        totalTodos={totalTodos}
-        completedTodo={completedTodo}
-      />
-      <TodoSearch 
-        searchValue={searchValue}
-        setSearchValue={setSearchValue}
-      />
-*/}
 
+
+      
         <TodoList>
           {error && <p>Hubo un error ... </p>}
           {loading && <p>estamos cargando</p>}
@@ -54,6 +50,11 @@ function AppUI() {
             />
           ))}
         </TodoList>
+        {openModal && (
+            <Modal>
+                <ContainerCreateTask createTaskEvent={createTaskEvent} />
+            </Modal>
+        )}
       </div>
     </div>
   );
