@@ -2,60 +2,52 @@
   text-align: center;
 }
 
-
-
-
-
 .container-app {
   display: flex;
   padding: 1em;
   flex-direction: column;
   justify-content: center;
-  background: rgb(255,255,255);
-  background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(244,169,77,0.5270702030812324) 100%);
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(244, 169, 77, 0.5270702030812324) 100%
+  );
 }
-
-
 
 .container-search-items {
   padding: 1em;
-  
 }
-
 
 .btn-add-todo-modal {
   border: 1px #eee;
   padding: 0.7em 1em 0.7em 1em;
   border-radius: 50%;
-  font-size: 2em; 
+  font-size: 2em;
   position: absolute;
-  background-color: #693A78;
+  background-color: #693a78;
   color: white;
   bottom: 1em;
   right: 1em;
   box-shadow: 2px 2px 5px #ccc;
 }
 
-@media screen and (min-width: 580px) {  
+@media screen and (min-width: 580px) {
   .container-app {
     display: flex;
     flex-direction: row;
     padding: 3em;
-    justify-content: center;  
+    justify-content: center;
     bottom: 0;
     height: 85vh;
-
   }
-  
 
   .container-search-items {
     padding: 2em;
-    width: 75%;    
+    width: 75%;
   }
 
   .btn-add-todo-modal {
     display: none;
   }
-
 }
-

@@ -1,9 +1,9 @@
 .create-task {
-    padding: 0.8em 1em 0.8em 1em ;
-    border-radius: 10px;
-    background-color: #693A78;
-    color: white;
-    font-size: 1.2em;
-    border: 0;
-    max-width: 9em;
+  padding: 0.8em 1em 0.8em 1em;
+  border-radius: 10px;
+  background-color: #693a78;
+  color: white;
+  font-size: 1.2em;
+  border: 0;
+  max-width: 9em;
 }
