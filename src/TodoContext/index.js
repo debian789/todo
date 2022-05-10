@@ -9,9 +9,7 @@ const todos = [
   { text: "Cotar cebolla 2", completed: true },
 ];
 
-function createTaskEvent() {
-  console.log("hooola");
-}
+
 
 function TodoProvider(props) {
   const {
@@ -42,7 +40,6 @@ function TodoProvider(props) {
     const todoIndex = todoValue.findIndex((todo) => todo.text == text);
     const newTodos = [...todoValue];
     newTodos[todoIndex].completed = !newTodos[todoIndex].completed;
-    //setItem(newTodos);
     saveTodos(newTodos);
   };
 
@@ -55,6 +52,15 @@ function TodoProvider(props) {
     // setItem(newTodos);
   };
 
+  const addTodo = (text) => {
+    const newTodos = [...todoValue];
+    newTodos.push({
+      completed: false,
+      text
+    })
+    saveTodos(newTodos);
+  }
+
   return (
     <TodoContext.Provider
       value={{
@@ -66,10 +72,10 @@ function TodoProvider(props) {
         setSearchValue,
         completeTodos,
         deleteTodo,
-        createTaskEvent,
         searchedTodos,
         openModal,
         setOpenModal,
+        addTodo
       }}
     >
       {props.children}

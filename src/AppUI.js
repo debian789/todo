@@ -23,7 +23,7 @@ function AppUI() {
 
   return (
     <div className="container-app">
-      <ContainerCreateTask createTaskEvent={createTaskEvent} />
+      <ContainerCreateTask  />
       <div className="container-search-items">
         <TodoCounter />
         <TodoSearch />
@@ -55,7 +55,7 @@ function AppUI() {
 
         {openModal && (
             <Modal>
-                <ContainerCreateTask createTaskEvent={createTaskEvent} />
+                <ContainerCreateTask />
             </Modal>
         )}
       </div>
