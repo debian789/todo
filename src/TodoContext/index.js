@@ -54,7 +54,7 @@ function TodoProvider(props) {
 
   const addTodo = (text) => {
     const newTodos = [...todoValue];
-    newTodos.push({
+    newTodos.unshift({
       completed: false,
       text
     })

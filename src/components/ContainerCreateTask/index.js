@@ -36,10 +36,11 @@ function ContainerCreateTask(props) {
       </button>
       <form onSubmit={save}>
         <h2>Create new task</h2>
-        <label>Task Name</label>
         <textarea  placeholder="Task..."  value = {valueTodo} onChange={onChange}/>
-        <button type="button"> Cancel</button>
-        <CreateTodoButton  />
+        <div className="container-btn-task">
+          <button type="button" className="btn-cancel-task" > Cancel</button>
+          <CreateTodoButton  />
+        </div>        
       </form>
     </div>
   );

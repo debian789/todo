@@ -1,6 +1,7 @@
 .itemList {
   display: flex;
   justify-content: space-between;
+  position: relative;
 }
 
 .itemList label {
@@ -9,7 +10,7 @@
 }
 
 .itemList .itemCheck {
-  border-radius: 50%;
+  border-radius: 10em;
   font-size: 0.7em;
   font-weight: bold;
   text-align: center;
@@ -17,15 +18,26 @@
 
 .itemList .openItem {
   border: 4px solid #5fb6dd;
-  padding: 0.5em 0.7em 0.5em 0.7em;
+  padding: 1em;
   color: rgb(121, 218, 52);
+  max-width: 0.5em;
+  max-height: 0.5em;
+  min-width: 0.5em;
+  min-height: 0.5em;
 }
 
 .itemList .doneItem {
   border: 4px solid rgb(165, 165, 165);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-  padding: 0.2em 0.4em 0.2em 0.4em;
+  padding: 1em;
   color: rgb(165, 165, 165);
+  max-width: 0.5em;
+  max-height: 0.5em;
+  min-width: 0.5em;
+  min-height: 0.5em;
 }
 
 .itemList .doneItemText {
@@ -42,8 +54,12 @@
 }
 
 .deleteItem {
+    box-shadow: 2px 2px 2px #ccc;
   border-radius: 10px 10px 10px 10px;
-  border: 0;
   background-color: rgb(238, 238, 238);
-  padding: 0.3em 0.6em 0.3em 0.6em;
+  padding: 0.5em 0.8em 0.5em 0.8em;
+  position: absolute;
+  border: 0;
+  right: -14px;
+  top: 18px;
 }
