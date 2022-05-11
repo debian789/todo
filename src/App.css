@@ -1,6 +1,5 @@
 .App {
   text-align: center;
-  border:1px solid blue;
 }
 
 .container-app {
@@ -9,16 +8,12 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: rgb(255, 255, 255);
-  background: linear-gradient(
-    0deg,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(244, 169, 77, 0.5270702030812324) 100%
-  );
 }
 
 .container-search-items {
-  padding: 0em;
+  padding: 0em 1em 0em 0em;
+
+  border: 1px solid red;
 }
 
 .btn-add-todo-modal {

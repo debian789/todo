@@ -1,24 +1,28 @@
 .container-search {
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  margin: 1em;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    margin: 1em;
+
 }
+
 
 .container-search button {
-  position: absolute;
-  right: 0;
-  border: 0;
-  width: 4em;
-  height: 100%;
-  align-items: center;
-  font-size: 1.2em;
-  border-radius: 0 10px 10px 0;
+    position: absolute;
+    right: 0;
+    border: 0;
+    width: 4em;
+    height: 100%;    
+    align-items: center;
+    font-size: 1.2em;
+    border-radius: 0 10px 10px 0;
 }
 
+
 .input-search {
-  border: 1px solid #eee;
-  padding: 1em;
-  border-radius: 10px;
-  box-shadow: 1px 1px 10px #ccc;
+    border: 1px solid #eee;
+    padding: 1em;
+    border-radius: 10px;
+    box-shadow:  1px 1px 10px #ccc;
+
 }

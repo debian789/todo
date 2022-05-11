@@ -21,7 +21,7 @@ function TodoSearch() {
         className="input-search"
         placeholder="Search..."
       />
-      <button>Q{searchValue}</button>
+      <button>Q</button>
     </div>
   );
 }
