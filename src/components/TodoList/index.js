@@ -1,7 +1,9 @@
 import "./TodoList.css";
 
 function TodoList(props) {
-  return <ul>{props.children}</ul>;
+  return (<div className="container-list-items">
+      <ul>{props.children}</ul>
+    </div>);
 }
 
 export { TodoList };

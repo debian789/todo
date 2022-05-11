@@ -9,12 +9,7 @@ body {
   min-height: 100vh;
   position: relative;
 
-  background: rgb(255, 255, 255);
-  background: linear-gradient(
-    0deg,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(244, 169, 77, 0.5270702030812324) 100%
-  );
+
 }
 
 code {
