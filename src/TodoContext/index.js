@@ -53,12 +53,14 @@ function TodoProvider(props) {
   };
 
   const addTodo = (text) => {
-    const newTodos = [...todoValue];
-    newTodos.unshift({
-      completed: false,
-      text
-    })
-    saveTodos(newTodos);
+    if (text) {
+      const newTodos = [...todoValue];
+      newTodos.unshift({
+        completed: false,
+        text
+      })
+      saveTodos(newTodos);
+    }
   }
 
   return (
