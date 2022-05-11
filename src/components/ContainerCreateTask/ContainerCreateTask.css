@@ -62,7 +62,7 @@ h2 {
   .container-create-task {
     display: flex;
     padding: 0em 1em 1em 1em¡;
-    margin-right: 3em;
+    margin-right: 1.5em;
     min-width: 25%;
     background-image: url("../../images/create.png");
     background-position: bottom;
