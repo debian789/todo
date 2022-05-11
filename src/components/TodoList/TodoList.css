@@ -1,17 +1,16 @@
 .container-list-items {
   display: flex;
-  border: 1px solid red;
   position: relative;
   overflow-y: scroll;
   overflow-x: hidden;
   height: 100%;
-  padding:0em 1em 0 0;
+  padding:0em 1em 1em 0;
 }
 
 ul {
   list-style-type: none;
   margin: 0;
-  padding: 0;
+  padding: 0 0 2em 0;
 
 }
 

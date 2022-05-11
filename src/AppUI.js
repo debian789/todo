@@ -51,7 +51,6 @@ function AppUI() {
           ))}
         </TodoList>
 
-        <button className="btn-add-todo-modal" onClick={() => {setOpenModal(true)}} > + </button>
 
         {openModal && (
             <Modal>
@@ -59,6 +58,8 @@ function AppUI() {
             </Modal>
         )}
       </div>
+
+      <button className="btn-add-todo-modal" onClick={() => {setOpenModal(true)}} > + </button>
     </div>
   );
 }
