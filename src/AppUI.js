@@ -14,28 +14,22 @@ function AppUI() {
     error,
     loading,
     searchedTodos,
-    createTaskEvent,
     completeTodos,
     deleteTodo,
     openModal,
-    setOpenModal
+    setOpenModal,
   } = React.useContext(TodoContext);
 
   return (
     <div className="container-app">
-      <ContainerCreateTask  />
+      <ContainerCreateTask />
       <div className="container-search-items">
         <TodoCounter />
         <TodoSearch />
-
-
-
-      
         <TodoList>
           {error && <p>Hubo un error ... </p>}
           {loading && <p>estamos cargando</p>}
           {!loading && !searchedTodos.length && <p>Crea tu primer todo</p>}
-
           {searchedTodos.map((item, index) => (
             <TodoItem
               key={index}
@@ -50,16 +44,21 @@ function AppUI() {
             />
           ))}
         </TodoList>
-
-
         {openModal && (
-            <Modal>
-                <ContainerCreateTask />
-            </Modal>
+          <Modal>
+            <ContainerCreateTask />
+          </Modal>
         )}
       </div>
 
-      <button className="btn-add-todo-modal" onClick={() => {setOpenModal(true)}} > + </button>
+      <button
+        className="btn-add-todo-modal"
+        onClick={() => {
+          setOpenModal(true);
+        }}
+      >
+        +
+      </button>
     </div>
   );
 }

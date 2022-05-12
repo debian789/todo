@@ -3,8 +3,8 @@
   position: relative;
   overflow-x: hidden;
   height: 100%;
-  padding:0em 1em 1em 0;
-  justify-content:space-between;
+  padding: 0em 1em 1em 0;
+  justify-content: space-between;
 }
 
 ul {
@@ -19,7 +19,6 @@ ul {
   left: 0;
   top: 0;
   width: 98%;
-
 }
 
 ul li {
@@ -29,4 +28,3 @@ ul li {
   border-radius: 10px;
   background-color: white;
 }
-

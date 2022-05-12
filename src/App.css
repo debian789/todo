@@ -1,5 +1,5 @@
 .container-app {
-  padding: 1em ;
+  padding: 1em;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -15,12 +15,11 @@
   position: fixed;
   top: 0;
   right: 0;
-  left:0;
-
+  left: 0;
 }
 
 .container-search-items {
-  padding: 0em ;
+  padding: 0em;
   position: relative;
   display: flex;
   flex-direction: column;
