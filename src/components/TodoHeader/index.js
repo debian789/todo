@@ -1,12 +1,11 @@
 import React from "react";
 
+function TodoHeader({children, loading}) {
 
-
-function TodoHeader({children
-}) {
   return (
     <React.Fragment>
-        {children}
+        {React.Children.toArray(children)
+        .map(child => React.cloneElement(child, {loading}))}
     </React.Fragment>
   );
 }

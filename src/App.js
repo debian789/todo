@@ -39,11 +39,14 @@ function App() {
     <div className="container-app">
       <ContainerCreateTask />
       <div className="container-search-items">
-        <TodoHeader>
-          <TodoCounter totalTodos={totalTodos} completedTodo={completedTodo} />
+        <TodoHeader loading = {loading}>
+          <TodoCounter 
+            totalTodos={totalTodos} 
+            completedTodo={completedTodo} 
+          />
           <TodoSearch
             searchValue={searchValue}
-            setSearchValue={setSearchValue}
+            setSearchValue={setSearchValue}            
           />
         </TodoHeader>
         <TodoList 

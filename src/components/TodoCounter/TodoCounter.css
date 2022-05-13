@@ -5,3 +5,7 @@ h1 {
 h4 {
   margin: 1em 0 0 0;
 }
+
+.title-loading {
+  opacity: 0.5;
+}
