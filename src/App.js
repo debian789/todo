@@ -50,7 +50,8 @@ function App() {
           error = {error}
           loading = {loading}
           searchedTodos= {searchedTodos}
-
+          searchText = {searchValue}
+          totalTodos = {totalTodos}
           onError = {() =>  <p>Hubo un error ... </p>}
           onLoading = {() =>  <p>estamos cargando</p>}
           render = {(item, index) => (

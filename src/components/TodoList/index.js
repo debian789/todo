@@ -1,12 +1,22 @@
 import "./TodoList.css";
 
-function TodoList({error, loading, searchedTodos, onError, onLoading, render}) {
+function TodoList({
+  error, 
+  loading, 
+  searchedTodos, 
+  onError, 
+  onLoading, 
+  render,
+  searchText,
+  totalTodos
+  }) {
   return (
     <div className="container-list-items">
 
       {error && onError()}
       {loading && onLoading()}
-      {!loading && !searchedTodos.length && <p>Crea tu primer todo</p>}
+      {!loading && !totalTodos && <p>Crea tu primer todo</p>}
+      {!!searchText && !searchedTodos.length && <p>No existen resultados para {searchText}</p>}
 
 
 
