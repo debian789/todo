@@ -1,10 +1,8 @@
 import React from "react";
 import { CreateTodoButton } from "../CreateTodoButton";
 import "./ContainerCreateTask.css";
-import { TodoContext } from "../../TodoContext";
 
-function ContainerCreateTask(props) {
-  const { setOpenModal, openModal, addTodo } = React.useContext(TodoContext);
+function ContainerCreateTask({ setOpenModal, openModal, addTodo }) {
   const [valueTodo, setValueTodo] = React.useState("");
 
   const cancel = () => {};
