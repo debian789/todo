@@ -46,7 +46,29 @@ function App() {
             setSearchValue={setSearchValue}
           />
         </TodoHeader>
+        <TodoList 
+          error = {error}
+          loading = {loading}
+          searchedTodos= {searchedTodos}
 
+          onError = {() =>  <p>Hubo un error ... </p>}
+          onLoading = {() =>  <p>estamos cargando</p>}
+          render = {(item, index) => (
+            <TodoItem
+              key={index}
+              text={item.text}
+              completed={item.completed}
+              onComplete={() => {
+                completeTodos(item.text);
+              }}
+              deleteTodo={() => {
+                deleteTodo(item.text);
+              }}
+            />
+          )}
+        />
+
+{/*
         <TodoList>
           {error && <p>Hubo un error ... </p>}
           {loading && <p>estamos cargando</p>}
@@ -64,7 +86,7 @@ function App() {
               }}
             />
           ))}
-        </TodoList>
+        </TodoList> */}
         {openModal && (
           <Modal>
             <ContainerCreateTask
