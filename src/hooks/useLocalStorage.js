@@ -48,7 +48,8 @@ function useLocalStorage(nameLocal, initialValue) {
     saveTodos,
     loading,
     error,
-    sincronizedItem
+    sincronizedItem,
+    sincronizedItemTodo
   };
 }
 

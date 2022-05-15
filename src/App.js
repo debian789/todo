@@ -26,7 +26,8 @@ function App() {
     searchValue,
     setSearchValue,
     addTodo,
-    sincronizedItem
+    sincronizedItem,
+    sincronizedItemTodo
   } = useTodos();
 
   // Se ejecuta previo al render
@@ -56,6 +57,7 @@ function App() {
           />
         </TodoHeader>
         <TodoList 
+          sincronizedItemTodo= {sincronizedItemTodo}
           error = {error}
           loading = {loading}
           searchedTodos= {searchedTodos}

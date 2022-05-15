@@ -8,28 +8,29 @@ function TodoList({
   onLoading, 
   render,
   searchText,
-  totalTodos
+  totalTodos,
+  sincronizedItemTodo
   }) {
   return (
     <div className="container-list-items">
 
       {error && onError()}
       {loading && onLoading()}
-      {!loading && !totalTodos && <p>Crea tu primer todo</p>}
+      {!loading && !totalTodos && !searchText &&  <p>Crea tu primer todo</p>}
       {!!searchText && !searchedTodos.length && <p>No existen resultados para {searchText}</p>}
 
 
 
-      <ul>
+      {sincronizedItemTodo &&  <ul>
         {
-          searchedTodos.map((item, index) => render(item, index))
+          (!error && !loading) && searchedTodos.map((item, index) => render(item, index))
         }
         <br />
         <br />
         <br />
         <br />
         <br />
-      </ul>
+      </ul> }
     </div>
   );
 }
