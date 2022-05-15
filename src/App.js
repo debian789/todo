@@ -26,6 +26,7 @@ function App() {
     searchValue,
     setSearchValue,
     addTodo,
+    sincronizedItem
   } = useTodos();
 
   // Se ejecuta previo al render
@@ -116,7 +117,9 @@ function App() {
         +
       </button>
 
-      <ChangeAlertWithStorageLitener/>
+      <ChangeAlertWithStorageLitener  
+      sincronize = {sincronizedItem}
+       />
     </div>
   );
 }
