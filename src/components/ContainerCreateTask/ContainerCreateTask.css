@@ -29,23 +29,18 @@ h2 {
   position: relative !important;
   margin:0  0 1em 0; 
   padding: 0.5em 0 5em 0;
+  font-family: 'Roboto', sans-serif;
 
 }
 
 .container-create-task textarea::placeholder {
-  color: red;
   font-size: 1rem;
   color: #9c9c9c;
   font-family: 'Roboto', sans-serif;
 }
 
 
-.container-create-task textarea::shadow{ 
-border: 1px soli red;
-}
-
-.container-create-task textarea:focus { 
-  border: 1px soli red;
+.container-create-task textarea:focus {
   outline: none;
   }
 
