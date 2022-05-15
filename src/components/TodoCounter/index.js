@@ -1,7 +1,6 @@
 import React from "react";
 import "./TodoCounter.css";
 
-
 function contadorTotal(totalTodos) {
   return function ContadorTodo(props) {
     return (<span>{props.completedTodo} de {totalTodos}</span>)

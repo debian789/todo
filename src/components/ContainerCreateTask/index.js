@@ -4,9 +4,7 @@ import "./ContainerCreateTask.css";
 
 function ContainerCreateTask({ setOpenModal, openModal, addTodo }) {
   const [valueTodo, setValueTodo] = React.useState("");
-
   const cancel = () => {};
-
   const onChange = (event) => {
     setValueTodo(event.target.value);
   };

@@ -10,8 +10,6 @@ import "./App.css";
 import { TodoSearch } from "./components/TodoSearch";
 import { ChangeAlert } from "./components/ChangeAlert";
 
-/*
- */
 function App() {
   const {
     error,
@@ -27,7 +25,7 @@ function App() {
     setSearchValue,
     addTodo,
     sincronizedItem,
-    sincronizedItemTodo
+    sincronizedItemTodo,
   } = useTodos();
 
   // Se ejecuta previo al render
@@ -40,32 +38,32 @@ function App() {
 */
   return (
     <div className="container-app">
-      <ContainerCreateTask 
-       setOpenModal={setOpenModal}
-       openModal={openModal}
-       addTodo={addTodo}
+      <ContainerCreateTask
+        setOpenModal={setOpenModal}
+        openModal={openModal}
+        addTodo={addTodo}
       />
       <div className="container-search-items">
-        <TodoHeader loading = {loading}>
-          <TodoCounter 
+        <TodoHeader loading={loading}>
+          <TodoCounter
             totalTodos={totalTodos} 
             completedTodo={completedTodo} 
           />
           <TodoSearch
             searchValue={searchValue}
-            setSearchValue={setSearchValue}            
+            setSearchValue={setSearchValue}
           />
         </TodoHeader>
-        <TodoList 
-          sincronizedItemTodo= {sincronizedItemTodo}
-          error = {error}
-          loading = {loading}
-          searchedTodos= {searchedTodos}
-          searchText = {searchValue}
-          totalTodos = {totalTodos}
-          onError = {() =>  <p>Hubo un error ... </p>}
-          onLoading = {() =>  <p>estamos cargando</p>}
-          render = {(item, index) => (
+        <TodoList
+          sincronizedItemTodo={sincronizedItemTodo}
+          error={error}
+          loading={loading}
+          searchedTodos={searchedTodos}
+          searchText={searchValue}
+          totalTodos={totalTodos}
+          onError={() => <p>Hubo un error ... </p>}
+          onLoading={() => <p>estamos cargando</p>}
+          render={(item, index) => (
             <TodoItem
               key={index}
               text={item.text}
@@ -79,26 +77,6 @@ function App() {
             />
           )}
         />
-
-{/*
-        <TodoList>
-          {error && <p>Hubo un error ... </p>}
-          {loading && <p>estamos cargando</p>}
-          {!loading && !searchedTodos.length && <p>Crea tu primer todo</p>}
-          {searchedTodos.map((item, index) => (
-            <TodoItem
-              key={index}
-              text={item.text}
-              completed={item.completed}
-              onComplete={() => {
-                completeTodos(item.text);
-              }}
-              deleteTodo={() => {
-                deleteTodo(item.text);
-              }}
-            />
-          ))}
-        </TodoList> */}
         {openModal && (
           <Modal>
             <ContainerCreateTask
@@ -109,7 +87,6 @@ function App() {
           </Modal>
         )}
       </div>
-
       <button
         className="btn-add-todo-modal"
         onClick={() => {
@@ -118,10 +95,7 @@ function App() {
       >
         +
       </button>
-
-      <ChangeAlert  
-        sincronize = {sincronizedItem}
-       />
+      <ChangeAlert sincronize={sincronizedItem} />
     </div>
   );
 }
