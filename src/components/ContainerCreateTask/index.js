@@ -17,19 +17,16 @@ function ContainerCreateTask({ setOpenModal, openModal, addTodo }) {
 
   return (
     <div className="container-create-task">
-      <button
-        className="close-modal"
-        onClick={() => {
-          setOpenModal(false);
-        }}
-      >
-        X
-      </button>
+      <h2>Create new task</h2>
       <form onSubmit={save}>
-        <h2>Create new task</h2>
         <textarea placeholder="Task..." value={valueTodo} onChange={onChange} />
         <div className="container-btn-task">
-          <button type="button" className="btn-cancel-task">
+          <button 
+            type="button" 
+            className="btn-cancel-task"
+            onClick={() => {
+              setOpenModal(false);
+           }}>
             Cancel
           </button>
           <CreateTodoButton />
