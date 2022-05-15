@@ -8,7 +8,7 @@ import { TodoHeader } from "./components/TodoHeader";
 import { TodoCounter } from "./components/TodoCounter";
 import "./App.css";
 import { TodoSearch } from "./components/TodoSearch";
-import { ChangeAlertWithStorageLitener } from "./components/ChangeAlert";
+import { ChangeAlert } from "./components/ChangeAlert";
 
 /*
  */
@@ -119,8 +119,8 @@ function App() {
         +
       </button>
 
-      <ChangeAlertWithStorageLitener  
-      sincronize = {sincronizedItem}
+      <ChangeAlert  
+        sincronize = {sincronizedItem}
        />
     </div>
   );
