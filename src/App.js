@@ -8,6 +8,7 @@ import { TodoHeader } from "./components/TodoHeader";
 import { TodoCounter } from "./components/TodoCounter";
 import "./App.css";
 import { TodoSearch } from "./components/TodoSearch";
+import { ChangeAlertWithStorageLitener } from "./components/ChangeAlert";
 
 /*
  */
@@ -37,7 +38,11 @@ function App() {
 */
   return (
     <div className="container-app">
-      <ContainerCreateTask />
+      <ContainerCreateTask 
+       setOpenModal={setOpenModal}
+       openModal={openModal}
+       addTodo={addTodo}
+      />
       <div className="container-search-items">
         <TodoHeader loading = {loading}>
           <TodoCounter 
@@ -110,6 +115,8 @@ function App() {
       >
         +
       </button>
+
+      <ChangeAlertWithStorageLitener/>
     </div>
   );
 }

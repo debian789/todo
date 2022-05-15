@@ -1,5 +1,6 @@
 import React from "react";
 import { useLocalStorage } from "./useLocalStorage";
+import {KEY_STORAGE} from './todoConst';
 
 function useTodos() {
   const {
@@ -7,7 +8,7 @@ function useTodos() {
     saveTodos,
     loading,
     error,
-  } = useLocalStorage("TODOS_V1", []);
+  } = useLocalStorage(KEY_STORAGE, []);
   const [searchValue, setSearchValue] = React.useState("");
   const [openModal, setOpenModal] = React.useState(false);
   const totalTodos = todoValue.length;

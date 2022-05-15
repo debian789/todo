@@ -1,0 +1,3 @@
+const KEY_STORAGE = "TODOS_V1"
+
+export {KEY_STORAGE};
