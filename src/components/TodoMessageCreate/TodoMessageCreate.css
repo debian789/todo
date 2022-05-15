@@ -1,0 +1,16 @@
+.container-message-create {
+    display: flex;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    position: absolute;
+    background-position: bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+    justify-content: center;    
+    padding-top: 2em;
+    background-image: url("../../images/message-create.png");
+    
+
+}

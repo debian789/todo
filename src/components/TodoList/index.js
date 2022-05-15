@@ -1,4 +1,5 @@
 import "./TodoList.css";
+import {TodoMessageCreate} from '../TodoMessageCreate'
 
 function TodoList({
   error, 
@@ -15,9 +16,9 @@ function TodoList({
     <div className="container-list-items">
       {error && onError()}
       {loading && onLoading()}
-      {!loading && !totalTodos && !searchText &&  <p>Crea tu primer todo</p>}
+      {!loading && !totalTodos && !searchText && <TodoMessageCreate />}
       {!!searchText && !searchedTodos.length && <p>No existen resultados para {searchText}</p>}
-      {sincronizedItemTodo &&  <ul>
+      { sincronizedItemTodo &&  <ul>
         {
           (!error && !loading) && searchedTodos.map((item, index) => render(item, index))
         }
