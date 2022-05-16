@@ -12,10 +12,12 @@ function TodoCounter({ totalTodos, completedTodo, loading }) {
 
   return (
     <React.Fragment>
-      <h1>Your Tasks</h1>
-      <h4 className={!!loading ? 'title-loading' : undefined}>
-        Has completado <WithContadorTotal completedTodo = {completedTodo}/> TODOs
-      </h4>
+      <div className="content-title-todo">      
+        <h1>Tus tareas</h1>
+        <h4 className={!!loading ? 'title-loading' : undefined}>
+          Has completado <WithContadorTotal completedTodo = {completedTodo}/>
+        </h4>
+      </div>
     </React.Fragment>
   );
 }
