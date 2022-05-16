@@ -9,6 +9,7 @@ import { TodoCounter } from "./components/TodoCounter";
 import "./App.css";
 import { TodoSearch } from "./components/TodoSearch";
 import { ChangeAlert } from "./components/ChangeAlert";
+import { TodoMessageLoad } from "./components/TodoMessageLoad";
 
 function App() {
   const {
@@ -62,7 +63,7 @@ function App() {
           searchText={searchValue}
           totalTodos={totalTodos}
           onError={() => <p>Hubo un error ... </p>}
-          onLoading={() => <p>estamos cargando</p>}
+          onLoading={() => <TodoMessageLoad/>}
           render={(item, index) => (
             <TodoItem
               key={index}
